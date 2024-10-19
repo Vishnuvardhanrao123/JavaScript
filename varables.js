@@ -1,4 +1,6 @@
-var redeclration //
+
+//types of varables and declarations//
+var redeclration 
 var a=10;
 var a=20;
 console.log(a)//output:20//
@@ -9,7 +11,7 @@ var a=5;
 const a=70;
 console.log(a)//SyntaxError: Identifier 'a' has already been declared//
 
-var reassignment//
+//var reassignment//
 var b=30;
 b=35.55;
 console.log(b)//output:35.55//
@@ -20,7 +22,10 @@ const d=40;
 d=33.55;
 console.log(d)//Uncaught TypeError TypeError: Assignment to constant variable.//
 
-// not defined and undefined//
+
+
+
+//Hostings//
 console.log(a)//undefined//
 var a = 10;
 var q
@@ -34,6 +39,11 @@ const c = 10;
 
 const n;
 console.log(n)//syntaxError: Missing initializer in const declaration//
+
+
+
+
+
 
 //authematic functions//
 var a=23;
