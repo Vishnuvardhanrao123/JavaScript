@@ -37,9 +37,13 @@ console.log(h >= s)//t
 var l=40
 console.log(h <= l)//t
 console.log(g <= l)//f
-// 4.logic
+// 4.logic(&&,||,!)//
+
 // 5.string
-// 6.bit
+// 6.bitwise (&,|)//
+   sum=10;
+  (sum & 1)? console.log("odd"):console.log("even")
+
 // 7.ternary
 // 8.type
 
