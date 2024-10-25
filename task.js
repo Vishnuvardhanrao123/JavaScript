@@ -32,7 +32,7 @@ const secondname="Vardhan"
 console.log(firstname.concat(" "+secondname))
 // const age=+prompt("enter the age:")
 // // (age > 18) ? console.log(` ${age} eligible to vote.`) : console.log(` ${age}  Not eligible to vote.`);
-const age = 20;
+const age = prompt("enter the age");
 (age > 18) ? console.log(`${age} eligible to vote.`) : console.log(`${age} Not eligible to vote.`)
 var fullname = firstname+secondname ;
 (fullname.length > 10) ? console.log(`${fullname} name is longer than 10 characters.`) : console.log(`${fullname} name is less than 10 characters.`)
