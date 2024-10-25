@@ -10,7 +10,10 @@
 // Output: Total tax payable
 
 let income = prompt("enter the income::");
-if (income <= 250000) {
+if (income<= 0){
+    console.log("cannot read negative value and zero")
+}
+else if (income <= 250000) {
     console.log(`${income} no tax`)
 }
 else if (income > 250000 && income <= 500000) {
@@ -56,8 +59,12 @@ else {
 // Input: Two variables for weight and destination
 // Output: The total shipping cost
 let weight = +prompt('enter your weight::');
+if(weight <= 0){
+    console.log("Please enter the wieght greater than zero")
+    return;
+}
 let destination = prompt('enter your Destination::');
-// let cost = 0;
+ let cost = 0;
 if (weight <= 1) {
     if (destination === 'local') {
         cost = 5;
@@ -117,19 +124,20 @@ console.log(cost)
 // Requirements:
 // Input: A variable representing the number of units consumed
 // Output: Total electricity bill amount
-let units =prompt("enter consumed units::");
-    if (units <= 100) {
-      billamount=units * 1; 
-        console.log(`${units} electricity bill`)
-    } 
-    else if (units > 100 && units <= 300) {
-       billamount= (100 * 1) + ((units - 100) * 1.5);
-         console.log(`${billamount} electricity bill`)
-    } 
-    else if (units>300) {
-       billamount= (100 * 1) + (200 * 1.5) + ((units - 300) * 2); 
-        console.log(`${billamount} electricity bill`)
-    }
-    else{
-         console.log(` invaled value`)
-    }
+let units = prompt("enter consumed units::");
+if (units <= 100) {
+    billamount = units * 1;
+    console.log(`${billamount}rs electricity bill`)
+}
+else if (units > 100 && units <= 300) {
+    billamount = (100 * 1) + ((units - 100) * 1.5);
+    console.log(`${billamount}rs electricity bill`)
+}
+else if (units > 300) {
+    billamount = (100 * 1) + (200 * 1.5) + ((units - 300) * 2);
+    console.log(`${billamount}rs electricity bill`)
+}
+else {
+    console.log(` invaled value`)
+}
+
