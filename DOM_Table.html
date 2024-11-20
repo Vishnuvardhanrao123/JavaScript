@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="table"></div>
+    <script>
+        const details = [{ id: 1, name: "  ", batch: "22r", study: "fullstack", ismockcompleted: true },
+        { id: 2, name: "venkat", batch: "22r", study: "fullstack", ismockcompleted: false },
+        { id: 3, name: "rahul", batch: "22r", study: "fullstack", ismockcompleted: true },
+        { id: 4, name: "vijay", batch: "22r", study: "fullstack", ismockcompleted: false },
+        { id: 5, name: "nikhil", batch: "22r", study: "fullstack", ismockcompleted: true },
+        ];
+        const table_box = document.querySelector(".table")
+        const table = document.createElement("table");
+        const thead = document.createElement("thead");
+        const tbody = document.createElement("tbody");
+        const tableheadrow = document.createElement("tr");
+
+
+
+        table.style.borderCollapse = "collapse";
+        table.style.width = "100%";
+
+
+        header = [];
+        for (keys in details[0]) {
+            header.push(keys)
+        }
+
+
+        for (val of header) {
+            const th = document.createElement("th")
+            th.textContent = val[0].toUpperCase() + val.slice(1)
+
+            th.style.padding = "10px";
+            th.style.border = "1px solid #ddd";  // Light gray border for the header
+            th.style.backgroundColor = "#f4f4f4";  // Light background color for the header
+            th.style.textAlign = "left";
+
+
+            tableheadrow.appendChild(th)
+        }
+
+
+
+        for (objs of details) {
+            const tableDataRows = document.createElement("tr")
+            for (key in objs) {
+                const td = document.createElement("td")
+                // Replace empty name with "--"
+                if (key === "name" && objs[key].trim() === "") {
+                    td.textContent = "-------";
+                }
+                // Replace true/false for ismockcompleted with 'cleared'/'not cleared'
+                else if (key === "ismockcompleted") {
+                    td.textContent = objs[key] ? "cleared" : "not cleared";
+                }
+                else {
+                    td.textContent = objs[key];
+                }
+
+                td.style.padding = "8px";
+                td.style.border = "1px solid #ddd";  // Light gray border for cells
+                td.style.textAlign = "left";  // Align text to the left for data cells
+
+                // Optional: Change background color for cleared status
+                if (key === "ismockcompleted") {
+                    td.style.fontWeight = "bold";
+                    td.style.textAlign = "center";
+                    td.style.backgroundColor = objs[key] ? "#c8e6c9" : "#ffcdd2";  // Green for cleared, red for not cleared
+                }
+
+
+                tableDataRows.appendChild(td)
+            }
+            tbody.appendChild(tableDataRows)
+        }
+        table.appendChild(thead);
+        thead.appendChild(tableheadrow);
+        table.appendChild(tbody);
+        table_box.appendChild(table)
+
+
+
+
+    </script>
+</body>
+
+</html>

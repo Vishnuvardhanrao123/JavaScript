@@ -106,3 +106,4 @@ Object.freeze(per);
 per.name = "Bob";
 per.age = 25;
 console.log(per)
+

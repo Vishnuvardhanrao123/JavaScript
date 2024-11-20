@@ -1,44 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom</title>
 </head>
+
 <body>
-     <h1></h1>
+    <h1></h1>
     <div id="mydiv">
         <p>this is<strong>vishnu</strong></p>
         <p class="child">this is vishnu</p>
         <div>new element</div>
     </div>
-    <script >
-       //Using DOM  basics//
+    <script>
+       // Using DOM  basics//
 
-        //calling the html page//
+       // calling the html page//
         console.log(document)
 
         //adding message to idealtag H1//
-        const data=document.getElementsByTagName("h1")[0]
-       data.innerHTML="it is good"
-       console.log(data)
+        const data = document.getElementsByTagName("h1")[0]
+        data.innerHTML = "it is good"
+        console.log(data)
+
+        //changing the message of present tag content//
+        const p = document.getElementsByClassName("child")[0]
+        p.textContent = "old element"
+        console.log(p)
+
+        //creating child element in parent element//
+        const div = document.getElementById("mydiv")
+        const newdiv = document.createElement("div")
+        newdiv.textContent = "love is nice"
+        div.appendChild(newdiv)
+        console.log(div.innerHTML)
+
+        //writing content in the webpage//
+        document.write("i love my slef")
+
+        //ways to crete child elemrnts in parent//
+        const parent = document.getElementById('parent');
+        const newChild = document.createElement('div');
+        newChild.textContent = 'New Child';
+        parent.appendChild(newChild);
+
+        //
+        const parent = document.getElementById('parent');
+        const newChild = document.createElement('div');
+        newChild.textContent = 'New Child';
+        const referenceNode = parent.firstChild; // You can specify where to insert
+        parent.insertBefore(newChild, referenceNode);
+
+        //
+        const parent = document.getElementById('parent');
+        parent.innerHTML += '<div>New Child</div>';
+
+        //
+        const parent = document.getElementById('parent');
+        parent.insertAdjacentHTML('beforeend', '<div>New Child</div>'); // 'beforeend' is the default
+
+        //
+        const parent = document.getElementById('parent');
+        const originalChild = document.getElementById('existingChild');
+        const clonedChild = originalChild.cloneNode(true); // `true` clones the node with its children
+        parent.appendChild(clonedChild);
+
+        //
+        const parent = document.getElementById('parent');
+        const oldChild = parent.querySelector('.old-child');
+        const newChild = document.createElement('div');
+        newChild.textContent = 'Replaced Child';
+        parent.replaceChild(newChild, oldChild);
+
+        //
+        const parent = document.getElementById('parent');
+        const newChild = document.createElement('div');
+        newChild.textContent = 'New Child';
+        parent.insertAdjacentElement('beforeend', newChild); // 'beforeend' places it at the end
+
     
-       //changing the message of present tag content//
-       const p=document.getElementsByClassName("child")[0]
-       p.textContent="old element"
-       console.log(p)
 
-       //creating child element in parent element//
-    //    const div=document.getElementsByTagName("mydiv")[0]
-    //    const newdiv=document.createElement("div")
-    //    newdiv.textContent="love is nice"
-    //    div.appendChild(newdiv)
-    //    console.log(div.innerHTML)
-        
-       //writing content in the webpage//
-    //    document.write("i love my slef")
-    </script> 
 
-   
+    </script>
+
+
 </body>
+
 </html>

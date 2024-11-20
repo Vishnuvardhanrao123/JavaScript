@@ -345,4 +345,3 @@ function checkInternetUsage(usedData, dataLimit) {
 checkInternetUsage(80, 100); 
 checkInternetUsage(100, 100); 
 
-

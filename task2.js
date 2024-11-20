@@ -26,14 +26,18 @@
   console.log(sum)
  
 // 3.check whether given is a armstrong number.
-number=155
+number=153
 sum= 0
 tem= number
 while(tem>0){
     remainder= tem%10
-    sum+= remainder * remainder*remainder
+   
+    sum+= remainder*remainder*remainder
+    
     tem= tem/10
+   
 }
+
 if(sum == number){
     console.log(`${sum == number} it is armstrong number`)
 }
