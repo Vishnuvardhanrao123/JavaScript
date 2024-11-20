@@ -1,2 +1,2 @@
-# java-basics
-using variables types and console
+# java-Script
+Javascript Notes as per Topics and problem Solving
