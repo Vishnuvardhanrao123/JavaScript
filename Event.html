@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+
+    <script>
+      const div= document.createElement("button")
+      div.textContent="button 1 "
+      document.body.appendChild(div)
+      document.getElementsByTagName('button')[0]
+      div.addEventListener('click',(div)=> alert(detail(person)))
+
+       
+    //  div.addEventListener('click',(press)=>{console.log(div.innerText)})
+    
+     var person={
+        name:"vishnuvardhan",
+        age:20,
+        cources:"fullstack developer",
+        cellnumber:9010440505
+
+     }
+     
+     function detail(value){
+        sum = ""
+           for(keys in value){
+               sum += value[keys]
+           }
+           return (sum)
+
+     }
+     
+    
+
+//  type of Events
+// Event	|Description
+// onchange	:An HTML element has been changed
+// onclick	:The user clicks an HTML element
+// onmouseover	:The user moves the mouse over an HTML element
+// onmouseout	:The user moves the mouse away from an HTML element
+// onkeydown	:The user pushes a keyboard key
+// onload:	The browser has finished loading the page
+
+
+    </script>
+</body>
+</html>

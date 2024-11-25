@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        #searchbox{
+            width: 250px;
+            height: 25px;
+        }
+        .list li{
+            list-style-type: none;
+            font-size: xx-large;
+
+        }
+    </style> -->
+</head>
+<body>
+    <input type="text" name="searchbox" id="searchbox" placeholder="Search.......">
+    <ul class="list">
+      <li>ball</li>
+      <li>bat</li>
+      <li>apple</li>
+      <li>banana</li>
+    </ul>
+    <script>
+        const styles = `  #searchbox{
+            width: 250px;
+            height: 25px;
+        }
+        .list li{
+            list-style-type: none;
+            font-size: xx-large;
+
+        }
+           
+        `;
+
+        // Create a <style> element
+        const styleElement = document.createElement('style');
+        styleElement.innerHTML = styles;
+
+        // Append the <style> element to the head of the document
+        document.head.appendChild(styleElement);
+       
+       
+       const searchbox=document.getElementById("searchbox")
+       const inputvalue=document.querySelectorAll(".list li")
+        searchbox.addEventListener("input",()=>{
+            const searchvalue=searchbox.value.toLowerCase();
+
+        inputvalue.forEach((item) =>{
+              if(item.textcontent.value.includes(searchvalue)){
+                item.style.display="block"
+              }
+              else{
+                item.style.display="none"
+              }
+            })
+              
+    
+        })       
+
+       
+    </script>
+</body>
+</html>

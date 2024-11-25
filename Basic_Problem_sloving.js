@@ -40,10 +40,14 @@ str="hello"
 // console.log=(output)
 
 // 6.Remove White Spaces: Input: 'hello world' | Output: 'helloworld' 
-input2='hello world' 
-// res= input2.split(" ").join("")
-res=input2.replaceAll(" ","")
-console.log(res)
+input="this is paragraph"
+newstr=""
+for(i=0;i<=input.length-1;i++){
+    if(input[i] !== " "){
+        newstr += input[i]
+        }
+}
+console.log(newstr)
 // 7.Concatenate Strings: Input: 'hello', 'world' | Output: 'helloworld'.
 input3=["hello", "world"]
 output= input3[0]+input3[1]
@@ -65,3 +69,4 @@ console.log(inpu1)
 // 10. Replace a Character: Input: 'hello', 'l', 'z' | Output: 'hezzo'.
 data='hello'
 console.log(data.replaceAll('l','z'))
+
