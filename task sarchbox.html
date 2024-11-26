@@ -49,9 +49,10 @@
        const inputvalue=document.querySelectorAll(".list li")
         searchbox.addEventListener("input",()=>{
             const searchvalue=searchbox.value.toLowerCase();
-
-        inputvalue.forEach((item) =>{
-              if(item.textcontent.value.includes(searchvalue)){
+            
+            inputvalue.forEach((item) =>{
+            console.log(item.textContent)
+              if(item.textContent.toLowerCase().includes(searchvalue)){
                 item.style.display="block"
               }
               else{
