@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+   
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form class="parent">
+        <label for="Email" >Email/Username</label>
+        <input type="email"  id="email" value="" placeholder="consist of a-z+0-9+@+gmail.com" required="">
+         <label for="Password">Password</label>
+         <input type="current-password" id="password" value="" placeholder="consist of Aa-Zz+@+0-9">
+         <button type="submit" class="sign">Sign In</button>
+    </form>
+    <script>
+         const gettinglocal= localStorage.getItem("details")
+         const logindetail= JSON.parse(gettinglocal)
+ 
+        let form=document.getElementsByClassName("parent")
+        form.addEventListener("submit", (event) => {
+           event.preventDefault();
+        let Email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+           let Vrfyemail= localStorage.getItem(logindetail.email)
+             if(email != Vrfyemail){
+                showMessage("enter the correct email with a-z+0-1+@gamil.com","error")
+                return
+             }
+            let vrfypassword=localStorage.getItem(logindetail.password)
+            if(password != vrfypassword){
+                showMessage("Passwords do not match.", "error");
+                return;
+            }
+            else{
+                location.href="DOM_cards.html"
+            }
+            
+        })
+    </script>
+</body>
+</html>

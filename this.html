@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let person={
+    name:function(a,b){
+        console.log (`${this.name} is the fuul name ${a} is the  ${b}`)
+    },
+    age:function(){
+        console.log (this.age)
+    }
+    
+}
+let obj={
+    name:"vishnu",
+    age:20
+}
+person.name.apply(obj,["vardhan","rao"])
+person.age.call(obj)
+
+// 1.this keyword
+const person1= {
+   name:"vishnu",
+   sayhello: function(){
+    console.log(this.name)
+   }
+}
+person1.sayhello()
+
+// 2.this arrow function
+
+const calculator={
+    value:10,
+    add:function(){
+       console.log(`add value with 5 ${this.value}`)
+    },
+    subract: ()=>{
+        console.log(`subract value with 5 ${this.value}`)
+    }
+
+}
+const calculator2={
+    value:5
+    
+}
+calculator.add.call(calculator2)
+calculator.subract.call(calculator2)
+
+// 3.this with Event Handler
+const button=document.createElement("button")
+document.body.appendChild(button)
+button.textContent="Click Me"
+const person2= {
+   name:"vishnu",
+   sayhello: function(){
+       console.log(this.name)
+   }
+}
+button.addEventListener("click",()=>{
+    person2.sayhello()
+
+})
+
+// 4.call method
+const car={
+    name:"model1",
+    startEngine:function(){
+        console.log(`starting the engine of ${this.model}`)
+    }
+}
+const bick={
+    model:2018
+}
+car.startEngine.call(bick)
+
+// 5.Apply method
+const mathoperation={
+    name:"substraction",
+    add:function(a,b){
+        
+        console.log(`${this.name} of two numbers are ${this.a+this.b}`)
+    }
+}
+const math={
+    name:"addition"
+}
+mathoperation.add.apply(math,[10,20])
+
+// 6.bind method
+const counter={
+    count:0,
+    counthing:function(){
+        
+        console.log(`count incremented to value  ${this.count}  `)
+    }
+}
+const counter1={
+   count:1
+}
+const contaner=counter.counthing.bind(counter1)
+contaner()
+
+// 7.bind timer use
+const timer={
+    name:"vishnu",
+    start:function(){
+       console.log(this.name)
+     }
+    
+}
+const timer1={
+   name:setTimeout(function(){
+    "vishnu"
+   },2000)
+   
+}
+const timer2= timer.start.bind(timer1)
+timer2()
+
+
+    </script>
+</body>
+</html>
+
+

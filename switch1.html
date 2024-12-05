@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <button type="submit" name="next" id="submit"  >to forward page</button>
-    <button type="submit" name="back" id="submit1" >to back page</button>
+    <button type="submit" name="next" id="submit">to forward page</button>
+    <button type="submit" name="back" id="submit1">to back page</button>
     <script>
 
-        const ele=document.getElementById("submit")
-        const ele1=document.getElementById("submit1")
-         ele.addEventListener("click", ()=> {
-            window.location.href="switch2.html"
-         })
-         ele1.addEventListener("click", ()=> {
+        const ele = document.getElementById("submit")
+        const ele1 = document.getElementById("submit1")
+        ele.addEventListener("click", () => {
+            window.location.href = "switch2.html"
+
+
+        })
+        ele1.addEventListener("click", () => {
             window.history.back()
-         })
+
+        })
+        console.log(history.length  )
+
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function () {
+            window.history.pushState(null, "", window.location.href);
+        };
+
+
+
     </script>
 </body>
+
 </html>

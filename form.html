@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form with Enhanced Validations</title>
+    <title>Registration Form </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,6 +47,29 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        .loading-dots {
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+    }
+    .dot {
+      animation: blink 1s infinite;
+      display: inline-block;
+    }
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    @keyframes blink {
+      0%,  40%, 60%, 100% {
+        opacity: 0;
+      }
+      20% ,50% ,80%{
+        opacity: 1;
+      }
+    }
     </style>
 </head>
 <body>
@@ -81,14 +104,20 @@
 
         <button type="submit">Register</button>
     </form>
+    
 
     <div class="otp-section" id="otpSection" style="display: none;">
         <label for="otp">Enter OTP:</label>
         <input type="text" id="otp" placeholder="Enter 6-digit OTP">
+        <input type="text" id="otp1" value=" ">
         <button id="verifyOtp">Verify OTP</button>
+         <div id="loadingMessage" style="display: none;" class="loading-dots">
+        Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </div>
     </div>
 
     <div id="message" class="success">Registration successful! Welcome!</div>
+
 
     <script>
         let generatedOtp = null;
@@ -130,9 +159,22 @@
                 showMessage("Mobile number must be exactly 10 numeric digits.", "error");
                 return;
             }
+            let list={
+              Username:document.getElementById("username").value.trim(),
+              email:document.getElementById("email").value.trim(),
+              password:document.getElementById("password").value.trim(),
+              gender:document.getElementById("gender").value,
+              mobile:document.getElementById("mobile").value.trim()
+            }
+            localStorage.setItem("details",JSON.stringify(list))
+            console.log(list)
 
-            generatedOtp = Math.floor(Math.random()*1000000); 
-            console.log("Generated OTP:", generatedOtp); 
+            
+           generatedOtp = Math.floor(Math.random()*1000000); 
+           const otp1=document.getElementById("otp1").value=generatedOtp
+            
+           
+
 
             otpSection.style.display = "block";
             showMessage("OTP sent successfully! Please enter the OTP below.", "success");
@@ -142,9 +184,17 @@
             const enteredOtp = document.getElementById("otp").value.trim();
 
             if (enteredOtp == generatedOtp) {
-                showMessage("Registration successful! Welcome!", "success");
-                otpSection.style.display = "none";
-                form.reset(); 
+                
+         
+               document.getElementById("loadingMessage").style.display = "inline-block";
+                setTimeout(function() {
+                window.location.href = "login.html"; 
+                otpSection.style.display = "none"; 
+                form.reset();
+                }, 3000);  
+                
+               
+                 
             } else {
                 showMessage("Invalid OTP. Please try again.", "error");
             }

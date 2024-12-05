@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        .calculator {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .screen {
+            width: 260px;
+            height: 50px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 24px;
+            text-align: right;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #e1e1e1;
+        }
+        button:active {
+            background-color: #d4d4d4;
+        }
+        .equal {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .equal:hover {
+            background-color: #45a049;
+        }
+        .clear {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .clear:hover {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="screen" class="screen" disabled>
+    <div class="buttons">
+        <button onclick="appendNumber(7)">7</button>
+        <button onclick="appendNumber(8)">8</button>
+        <button onclick="appendNumber(9)">9</button>
+        <button onclick="appendOperator('+')">+</button>
+
+        <button onclick="appendNumber(4)">4</button>
+        <button onclick="appendNumber(5)">5</button>
+        <button onclick="appendNumber(6)">6</button>
+        <button onclick="appendOperator('-')">-</button>
+
+        <button onclick="appendNumber(1)">1</button>
+        <button onclick="appendNumber(2)">2</button>
+        <button onclick="appendNumber(3)">3</button>
+        <button onclick="appendOperator('*')">*</button>
+
+        <button onclick="appendNumber(0)">0</button>
+        <button onclick="appendDecimal()">.</button>
+        <button onclick="clearScreen()" class="clear">C</button>
+        <button onclick="appendOperator('/')">/</button>
+
+        <button onclick="calculate()" class="equal">=</button>
+    </div>
+</div>
+
+<script>
+    let screen = document.getElementById("screen");
+    let currentInput = "";
+
+    function appendNumber(number) {
+        currentInput += number;
+        screen.value = currentInput;
+    }
+
+    function appendOperator(operator) {
+        if (currentInput !== "") {
+            currentInput += operator;
+            screen.value = currentInput;
+        }
+    }
+
+    function appendDecimal() {
+        if (!currentInput.includes(".")) {
+            currentInput += ".";
+            screen.value = currentInput;
+        }
+    }
+
+    function clearScreen() {
+        currentInput = "";
+        screen.value = "";
+    }
+
+    function calculate() {
+        try {
+            currentInput = eval(currentInput).toString();
+            screen.value = currentInput;
+        } catch (error) {
+            screen.value = "Error";
+            currentInput = "";
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <table style="border: 2px;">
+        <thead>
+            <tr><input type="text" value="" id="input" placeholder="enter the number" required=""></tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td><button id="1">1</button></td>
+                <td><button id="2">2</button></td>
+                <td><button id="3">3</button></td>
+                <td><button id="add">+</button></td>
+            </tr>
+            <tr>
+                <td><button id="4">4</button></td>
+                <td><button id="5">5</button></td>
+                <td><button id="6">6</button></td>
+                <td><button id="multi">X</button></td>
+            </tr>
+            <tr >
+                <td><button id="7">7</button></td>
+                <td><button id="8">8</button></td>
+                <td><button id="9">9</button></td>
+                <td><button id="division">%</button></td>
+            </tr>
+            <tr>
+                <td><button id="clear">clear</button></td>
+                <td><button id="0">0</button></td>
+                <td><button id="enter">enter</button></td>
+                <td><button id="sub">--</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const 
+    </script>
+</body>
+</html> -->
