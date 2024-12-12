@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form >
+        <input type="text" id="username" placeholder="username"><br><br>
+        <input type="email" id="email" placeholder="email"><br><br>
+        <input type="password" id="password" placeholder="password"><br><br>
+
+        <button type="submit" id="submit">submit</button>
+     </form>
+    <script>
+    //get//
+    const input=fetch("http://localhost:3000/users").then((res)=> res.json()).then((data)=>{
+    data.forEach(element => {
+    console.log(element.username)
+    const user=document.createElement("h1")
+    user.textContent=element.username
+    document.body.appendChild(user)
+
+    });
+    })
+    console.log(input)
+    //post//
+    document.getElementById("submit").addEventListener("click",function(){
+        const username=document.getElementById("username").value.toLowerCase()
+        const email=document.getElementById("email").value.toLowerCase()
+        const password=document.getElementById("password").value.toLowerCase()
+    const post=fetch("http://localhost:3000/users",{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify({username:username,email:email, password: password})
+
+
+    }).then((res)=>res.json()).then((data)=>{console.log(data)
+
+    })
+    console.log(post)
+})
+    </script>
+</body>
+</html>

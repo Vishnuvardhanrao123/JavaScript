@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "vishnuvardhan",
+      "number": 9010440505
+    },
+    {
+      "id": "2",
+      "username": "vishnu",
+      "number": 9440023128
+    },
+    {
+      "id": "5176",
+      "username": "kondadivishnuvardhan@gmail.com",
+      "email": "",
+      "password": "vishnurao@123"
+    },
+    {
+      "id": "07d1",
+      "username": "vamshi",
+      "email": "kondadivishnuvardhan@gmail.com",
+      "password": "vishnurao@123"
+    },
+    {
+      "id": "d42a",
+      "username": "rahul",
+      "email": "kondadivishnuvardhan@gmail.com",
+      "password": "vishnurao"
+    },
+    {
+      "id": "fa86",
+      "username": "rinku",
+      "email": "rinku123@gmail.com",
+      "password": "rinku@123"
+    },
+    {
+      "id": "cf27",
+      "username": "vardhan",
+      "email": "manirao1371@gmail.com",
+      "password": "vishnura"
+    },
+    {
+      "id": "ade1",
+      "username": "rahul",
+      "email": "rahul123@gmail.com",
+      "password": "rahul@123"
+    }
+  ],
+  "posts": [
+    {
+      "likes": 0,
+      "commints": "good post",
+      "viewrs": 345,
+      "id": "aef9"
+    },
+    {
+      "likes": 5,
+      "commints": "bad post",
+      "viewrs": 300,
+      "id": "9556"
+    }
+  ]
+}

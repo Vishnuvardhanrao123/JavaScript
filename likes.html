@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=thumb_up" />
+    <style>
+        .material-symbols-outlined {
+           color: greenyellow;
+           font-size: 30px;
+           border-radius: 50%;
+            font-variation-settings:
+          'FILL' 0,
+          'wght' 500,
+          'GRAD' 0,
+          'opsz' 48
+          
+        }
+        </style>
+</head>
+
+<body>
+    <div>
+    <button class="material-symbols-outlined" style="border: 50%;">thumb_up</button>
+    <h3 id="display">0</h3>  
+    </div> 
+    <script>
+        document.querySelector(".material-symbols-outlined").addEventListener("click", ()=>{
+           
+           
+            const post=fetch("http://localhost:3000/users")
+        })
+      
+    </script>
+</body>
+</html>
