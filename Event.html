@@ -33,26 +33,26 @@ var person = {
 
 
 // Why is mouse events?
-const mouse= document.createElement("button")
-mouse.textContent="background colour"
+// const mouse= document.createElement("button")
+// mouse.textContent="background colour"
 
-document.body.appendChild(mouse)[1]
-mouse.addEventListener("mouseover",(e)=>{
-    const colour=["red","yellow","blue","green"]
-    const random=colour[Math.floor(Math.random()*colour.length)]
-    document.body.style.backgroundColor=random
-}  )
+// document.body.appendChild(mouse)[1]
+// mouse.addEventListener("mouseover",(e)=>{
+//     const colour=["red","yellow","blue","green"]
+//     const random=colour[Math.floor(Math.random()*colour.length)]
+//     document.body.style.backgroundColor=random
+// }  )
 //  what is key board events?
 // keypress=it will print waht we enter in key board
 // keyup=it will show output before we enter the keyvalue
 // keydown=it show after we enter the keyvalue
-const div=document.getElementById("parent")
-const newdiv=document.getElementById("parent2")
-const input=document.getElementById("text")
-input.addEventListener("keydown",(e)=>{
-    console.log("key pressed",e.key)
-newdiv.innerHTML=e.key
-})
+// const div=document.getElementById("parent")
+// const newdiv=document.getElementById("parent2")
+// const input=document.getElementById("text")
+// input.addEventListener("keydown",(e)=>{
+//     console.log("key pressed",e.key)
+// newdiv.innerHTML=e.key
+// })
 
 
 
